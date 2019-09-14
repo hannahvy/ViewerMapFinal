@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="theme.css" />
+    <style>
+            /* Set the size of the div element that contains the map */
+            #map {
+              height: 230px;  /* The height is 400 pixels */
+              width: 100%;  /* The width is the width of the web page */
+             }
+          </style>
+</head>
+<body style="font-family: 'Calibri', Helvetica, Arial, sans-serif; font-size: 40px; background-color: #3d3d3d
+">
+
+    <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNffOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="viewer.js" type="text/javascript"></script>
+
+    <div style="background-color: white"><h2 style="text-align: center; color: white">
+            <img src="viewermaplogo.png" width=50% height=50%></h2></div>
+    
+
+    <!---Dropdown allows viewer to select their country-->
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of Alexandria, Egypt
+  var alexandria = {lat: 31.2001, lng: 29.9187};
+  // The location of Lourmarin, France
+  var lourmarin = {lat: 43.7635, lng: 5.3626};
+  // The location of Salinas, California
+  var salinas = {lat: 36.6777, lng: -121.6555};
+  // The location of Tokyo, Japan
+  var tokyo = {lat: 35.6762, lng: 139.6503};
+ 
+  // The location of Rome, Italy -- for center
+  var rome = {lat: 41.9028, lng: 12.4964};
+ 
+  // The map, centered at Alexandria, Egypt
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 0.5, center: rome});
+  // The marker, positioned at Alexandria, Egypt
+  var marker = new google.maps.Marker({position: alexandria, icon: 'egypt.png', map: map});
+  var marker = new google.maps.Marker({position: lourmarin, icon: 'france.png', map: map});
+  var marker = new google.maps.Marker({position: salinas, icon: 'us.png', map: map});
+  var marker = new google.maps.Marker({position: tokyo, icon: 'japan.png', map: map});
+}
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBE1Q8_pBlfH9wGylK_aNNL-pF_ag3N6l8&callback=initMap
+    ">
+    </script>
+    <div class="dropdown">
+        <button class="dropbtn">select your country</button>
+        <div class="dropdown-content">
+          <a href="#">United States</a>
+          <a href="#">Canada</a>
+          <a href="#">United Kingdom</a>
+          <a href="#">...</a>
+        </div>
+    </div>
+    
+  
+
+    <section class="boxed">
+        alexuser is from USA <img src="ustiny.png" width=8% height=8%>
+        jamesuser is from FRANCE <img src="francetiny.png" width=8% height=8%>
+        marieuser is from JAPAN <img src="japantiny.png" width=8% height=8%>
+        kevuser is from EGYPT <img src="egypttiny.png" width=8% height=8%>
+        youuser is from...
+    </section>
+    <section class="lang">
+        <br>
+        <div class="lang2">LANGUAGES SPOKEN IN CHAT</div>
+        <div> English </div> <div> French </div>
+        <br>
+    </section>
+    <br>
+    <br>
+    <br>
+    <!-- <section class="boxed2">
+      <h2 style="text-align: center; font-size: 30px">Languages Spoken</h2>  
+      <br>
+      <br>
+      <br>
+      <br>
+    </section> -->
+</div>
+<div>
+</div>
+      </div>
+    <div id="list">
+    </div>
+</body>
+</html>
